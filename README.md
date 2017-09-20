@@ -62,3 +62,9 @@ Now head back to your host computer's browsers, and access your symfony applicat
 ```
 http://localhost:8080
 ```
+
+## Directory Structure
+`etc` configuration related to php and apache.
+`mysql` all mysql data will be kept here even if mysql container is removed.
+`var`  all variable data including cache and log files
+`www` all your symfony application code. 
