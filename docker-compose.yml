@@ -18,7 +18,7 @@ services:
     web:
         build: .
         volumes:
-            - ./wwww:/var/www/html
+            - ./www:/var/www/html
             - ./var/www/cache:/var/www/html/var/cache
             - ./var/www/logs:/var/www/html/var/logs
         restart: always
