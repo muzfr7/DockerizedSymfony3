@@ -64,7 +64,7 @@ http://localhost:8080
 ```
 
 ## Directory Structure
-`etc` configuration related to php and apache.
-`mysql` all mysql data will be kept here even if mysql container is removed.
-`var`  all variable data including cache and log files
-`www` all your symfony application code. 
+`etc` configuration related to php and apache.<br />
+`mysql` all mysql data will be kept here even if mysql container is removed.<br />
+`var`  all variable data including cache and log files<br />
+`www` all your symfony application code. <br />
