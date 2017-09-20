@@ -8,10 +8,8 @@ services:
             - ./mysql:/var/lib/mysql
         restart: always
         environment:
-            MYSQL_ROOT_PASSWORD: password
             MYSQL_DATABASE: symfony
-            MYSQL_USER: symfony
-            MYSQL_PASSWORD: symfony
+            MYSQL_ROOT_PASSWORD: password
         ports:
             - 33060:3306
 
