@@ -26,7 +26,6 @@ It will take a moment for the first time to build and setup image, subsequent bu
 $ docker-compose up -d
 ```
 
-### Remove `~/Developer/blog/www/var` Directory
 Remove var directory as it already ships with new symfony project.
 ```
 $ cd ~/Developer/blog/www
