@@ -41,5 +41,4 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 COPY etc/php.ini /usr/local/etc/php/php.ini
 COPY etc/000-default.conf /etc/apache2/sites-enabled/000-default.conf
 
-# Create new symfony project
-#WORKDIR /var/www/html/
+#WORKDIR /var/www/html
