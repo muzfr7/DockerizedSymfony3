@@ -14,7 +14,7 @@ services:
             - 33060:3306
 
     web:
-        build: ./www/
+        build: .
         volumes:
             - ./www:/var/www/html
             - ./var/www/cache:/var/www/html/var/cache
