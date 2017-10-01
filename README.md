@@ -26,6 +26,13 @@ It will take a moment for the first time to build and setup image, subsequent bu
 $ docker-compose up -d
 ```
 
+### Remove `~/Developer/blog/www/var` Directory
+Remove var directory as it already ships with new symfony project.
+```
+$ cd ~/Developer/blog/www
+$ rm -rf var
+```
+
 ### List Containers
 Note, use mysql container name 'blog_db_1' as mysql hostname in `blog/www/app/config/parameters.yml` file
 ```
@@ -41,13 +48,6 @@ blog_web_1   docker-php-entrypoint apac ...   Up      0.0.0.0:8080->80/tcp
 Here `blog_web_1` refers to php:7.1-apache container.
 ```
 $ docker exec -it blog_web_1 bash
-```
-
-#### Remove `/var/www/html/var` Directory
-Remove var directory as it already ships with new symfony project.
-```
-$ cd /var/www/html
-$ rm -rf var
 ```
 
 #### Create New Project
