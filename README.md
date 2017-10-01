@@ -43,6 +43,13 @@ Here `blog_web_1` refers to php:7.1-apache container.
 $ docker exec -it blog_web_1 bash
 ```
 
+#### Remove `/var/www/html/var` Directory
+Remove var directory as it already ships with new symfony project.
+```
+$ cd /var/www/html
+$ rm -rf var
+```
+
 #### Create New Project
 While in `blog_web_1` container shell, create a new symfony project
 ```
