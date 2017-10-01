@@ -36,6 +36,7 @@ $ rm -rf var
 ### List Containers
 Note, use mysql container name 'blog_db_1' as mysql hostname in `blog/www/app/config/parameters.yml` file
 ```
+$ cd ~/Developer/blog
 $ docker-compose ps
 ```
 ```
