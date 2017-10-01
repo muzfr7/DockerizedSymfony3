@@ -61,12 +61,13 @@ $ symfony new symfony-project
 Move all files off `symfony-project` back to `/var/www/html` directory, and finaly remove `symfony-project` directory
 ```
 $ cd symfony-project
-$ mv -f * /var/www/html
+$ mv -f * ../
+$ cd ..
 $ rm -rf symfony-project
 ```
 
 ## Running
-Now head to your browser and navigate to
+Now head to your browser on your host computer, and navigate to
 ```
 http://localhost:8080
 ```
