@@ -26,12 +26,6 @@ It will take a moment for the first time to build and setup image, subsequent bu
 $ docker-compose up -d
 ```
 
-Remove var directory as it already ships with new symfony project.
-```
-$ cd ~/Developer/blog/www
-$ rm -rf var
-```
-
 ### List Containers
 Note, use mysql container name 'blog_db_1' as mysql hostname in `blog/www/app/config/parameters.yml` file
 ```
@@ -44,7 +38,7 @@ $ docker-compose ps
 blog_db_1    docker-entrypoint.sh mysqld      Up      0.0.0.0:33060->3306/tcp 
 blog_web_1   docker-php-entrypoint apac ...   Up      0.0.0.0:8080->80/tcp 
 ```
-### Access `blog_web_1` Container Shell
+### Access Container
 Here `blog_web_1` refers to php:7.1-apache container.
 ```
 $ docker exec -it blog_web_1 bash
@@ -60,6 +54,9 @@ $ symfony new symfony-project
 Move all files off `symfony-project` back to `/var/www/html` directory, and finaly remove `symfony-project` directory
 ```
 $ cd symfony-project
+$ mv var/bootstrap.php.cache ../var/bootstrap.php.cache
+$ mv var/SymfonyRequirements.php ../var/SymfonyRequirements.php
+$ rm -rf var
 $ mv -f * ../
 $ cd ..
 $ rm -rf symfony-project
