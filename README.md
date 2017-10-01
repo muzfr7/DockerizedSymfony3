@@ -1,57 +1,70 @@
 # Symfony Container
 SymfonyContainer gives you everything you need to quickly start developing your Symfony applications.
 
-## What's Included ?
+## What's Included?
 * PHP 7.1, Apache2, MySQL, Git, Nano, Composer, Symfony Installer
-* opcache, apcu, intl, XDebug, pdo, pdo_mysql, mcrypt, and more...
+* opcache, apcu, intl, XDebug, pdo_mysql, mcrypt, and more...
 
 ## Requirements
 You need to have Git, and [Docker](https://www.docker.com/) natively installed on your computer.
 
-## Installation
-Use git to clone this repository somewhere on your computer e-g: `~/Developer/`
+## Installation / Setup
+Clone this repository somewhere on your computer, for this example i'm cloning it to `~/Developer/` directory
 ```
+$ cd ~/Developer
 $ git clone https://github.com/muzfr7/SymfonyContainer.git
 ```
+Rename cloned repository with something like your project name and `cd` into it, in my case I am renaming it to `blog`
+```
+mv SymfonyContainer blog
+cd blog
+```
 
-Once cloned, it will create a folder named `SymfonyContainer`, this will be the basis for your docker container names, you can change it to an appropriate one. Next, change directory into it e-g: `$ cd SymfonyContainer`.
-
-Great, run following command to build and start your containers
+### Build and Start Containers
+It will take a moment for the first time to build and setup image, subsequent builds from the same image should be faster
 ```
 $ docker-compose up -d
 ```
 
 ### List Containers
-This command will display all created containers, here name of container would be hostname of that container in another container.
+Note, use mysql container name 'blog_db_1' as mysql hostname in `blog/www/app/config/parameters.yml` file
 ```
 $ docker-compose ps
 ```
 ```
         Name                      Command               State            Ports          
 ---------------------------------------------------------------------------------------
-symfonycontainer_db_1    docker-entrypoint.sh mysqld      Up      0.0.0.0:33060->3306/tcp 
-symfonycontainer_web_1   docker-php-entrypoint apac ...   Up      0.0.0.0:8080->80/tcp 
+blog_db_1    docker-entrypoint.sh mysqld      Up      0.0.0.0:33060->3306/tcp 
+blog_web_1   docker-php-entrypoint apac ...   Up      0.0.0.0:8080->80/tcp 
 ```
-### Access Container
-Here `symfonycontainer_web_1` is my symfony application container name as shown above.
+### Access `blog_web_1` Container Shell
+Here `blog_web_1` refers to php:7.1-apache container.
 ```
-$ docker exec -it symfonycontainer_web_1 bash
+$ docker exec -it blog_web_1 bash
 ```
-### Create New Project
-While in your container, change directory into webroot and create new symfony application
+
+#### Create New Project
+While in `blog_web_1` container shell, create a new symfony project
 ```
 $ cd /var/www/html
-$ symfony new .
+$ symfony new symfony-project
+```
+
+Move all files off `symfony-project` back to `/var/www/html` directory, and finaly remove `symfony-project` directory
+```
+$ cd symfony-project
+$ mv -f * /var/www/html
+$ rm -rf symfony-project
 ```
 
 ## Running
-Now open any browser on your host computer, and access your symfony application on localhost with port 8080
+Now head to your browser and navigate to
 ```
 http://localhost:8080
 ```
 
 ## Directory Structure
-`etc` configuration related to php and apache.<br />
+`etc` miscellaneous file e-g: apache, php configuration.<br />
 `mysql` all mysql data will be kept here even if mysql container is removed.<br />
-`var`  all variable data including cache and log files<br />
-`www` all your symfony application related code.<br />
+`var`  all variable data e-g: cache, log files.<br />
+`www` symfony application related code.<br />
