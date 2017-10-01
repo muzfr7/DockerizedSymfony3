@@ -1,0 +1,14 @@
+# cache, logs, session files (Symfony3)
+/var/cache/*
+/var/logs/*
+/var/sessions/*
+
+# assets and uploads
+/web/bundles/*
+/web/uploads/*
+
+# vendor directory
+/vendor/*
+
+# etc
+.DS_Store
