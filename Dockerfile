@@ -19,13 +19,13 @@ RUN apt-get update \
 	&& pecl install xdebug \
 
 	&& docker-php-ext-install \
+		intl \
 		opcache \
 		mysqli \
 		pdo_mysql \
 		sockets \
 		mcrypt \
 		xmlrpc \
-		zip \
 
 	&& docker-php-ext-enable \
         opcache \
@@ -41,4 +41,5 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 COPY etc/php.ini /usr/local/etc/php/php.ini
 COPY etc/000-default.conf /etc/apache2/sites-enabled/000-default.conf
 
-# WORKDIR /var/www/html/
+# Create new symfony project
+#WORKDIR /var/www/html/
