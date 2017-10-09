@@ -15,9 +15,7 @@ services:
     web:
         build: .
         volumes:
-            - ./www:/var/www/html
-            - ./var/www/cache:/var/www/html/var/cache
-            - ./var/www/logs:/var/www/html/var/logs
+            - ./www:/var/www/html:cached
         restart: always
         ports:
             - 8080:80
