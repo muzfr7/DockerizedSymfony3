@@ -54,9 +54,6 @@ $ symfony new symfony-project
 Move all files off `symfony-project` back to `/var/www/html` directory, and finaly remove `symfony-project` directory
 ```
 $ cd symfony-project
-$ mv var/bootstrap.php.cache ../var/bootstrap.php.cache
-$ mv var/SymfonyRequirements.php ../var/SymfonyRequirements.php
-$ rm -rf var
 $ mv -f * ../
 $ cd ..
 $ rm -rf symfony-project
