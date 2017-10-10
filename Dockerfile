@@ -41,10 +41,10 @@ RUN pecl install xdebug && docker-php-ext-enable xdebug
 # for PHP 7+
 RUN pecl install apcu && docker-php-ext-enable apcu
 
-# PHP 7+
+# Memcached for PHP 7+
 RUN pecl install memcached
 
-# PHP 5+
+# Memcached for PHP 5+
 # RUN pecl install memcached-2.2.0
 
 # Install composer and symfony installer
