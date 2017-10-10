@@ -68,5 +68,4 @@ http://localhost:8080
 ## Directory Structure
 `etc` miscellaneous file e-g: apache, php configuration.<br />
 `mysql` all mysql data will be kept here even if mysql container is removed.<br />
-`var`  all variable data e-g: cache, log files.<br />
 `www` symfony application related code.<br />
