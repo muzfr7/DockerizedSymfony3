@@ -9,6 +9,8 @@ RUN a2enmod rewrite
 # libpng-dev (required by gd)
 # libmcrypt-dev (required by mcrypt)
 # libxml2-dev (required by xmlrpc)
+# libz-dev (required by memcached)
+# libmemcached-dev (required by memcached)
 
 RUN \
 	apt-get update && \
@@ -18,6 +20,8 @@ RUN \
 	apt-get install libpng-dev -y && \
 	apt-get install libmcrypt-dev -y && \
 	apt-get install libxml2-dev -y && \
+	apt-get install libz-dev -y && \
+	apt-get install libmemcached-dev -y && \
 	apt-get clean all
 
 RUN docker-php-ext-install \
@@ -36,6 +40,12 @@ RUN docker-php-ext-install opcache && docker-php-ext-enable opcache
 RUN pecl install xdebug && docker-php-ext-enable xdebug
 # for PHP 7+
 RUN pecl install apcu && docker-php-ext-enable apcu
+
+# PHP 7+
+RUN pecl install memcached
+
+# PHP 5+
+# RUN pecl install memcached-2.2.0
 
 # Install composer and symfony installer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
