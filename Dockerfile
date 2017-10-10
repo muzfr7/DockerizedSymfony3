@@ -28,7 +28,8 @@ RUN docker-php-ext-install \
 	zip \
 	mcrypt \
 	xmlrpc \
-	bcmath
+	bcmath \
+	exif
 
 # Must be installed for Symfony
 RUN docker-php-ext-install opcache && docker-php-ext-enable opcache
