@@ -9,7 +9,7 @@ Docker containers configured for you to start developing your Symfony3 applicati
 You need to have Git, and [Docker](https://www.docker.com/) natively installed on your computer.
 
 ## Installation / Setup
-Clone this repository somewhere on your computer, for this example i'm cloning it to `~/Developer/` directory
+Clone this repository somewhere in your computer, for this example i'm cloning it to `~/Developer/` directory
 ```
 $ cd ~/Developer
 $ git clone https://github.com/muzfr7/DockerizedSymfony3.git
