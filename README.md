@@ -1,5 +1,5 @@
-# Symfony Container
-SymfonyContainer gives you everything you need to quickly start developing your Symfony applications.
+# Dockerized Symfony3+
+Docker containers configured for you to start developing your Symfony3 applications.
 
 ## What's Included?
 * PHP 7.1, Apache2, MySQL, Git, Nano, Composer, Symfony Installer
@@ -12,11 +12,11 @@ You need to have Git, and [Docker](https://www.docker.com/) natively installed o
 Clone this repository somewhere on your computer, for this example i'm cloning it to `~/Developer/` directory
 ```
 $ cd ~/Developer
-$ git clone https://github.com/muzfr7/SymfonyContainer.git
+$ git clone https://github.com/muzfr7/DockerizedSymfony3.git
 ```
 Rename cloned repository with something like your project name and `cd` into it, in my case I am renaming it to `blog`
 ```
-mv SymfonyContainer blog
+mv DockerizedSymfony3 blog
 cd blog
 ```
 
